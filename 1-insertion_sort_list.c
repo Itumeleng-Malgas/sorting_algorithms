@@ -9,15 +9,14 @@
 void insertion_sort_list(listint_t **list)
 {
 	/* Initialize a pointer to the second node in the list */
-	listint_t *current = (*list)->next;
+	listint_t *tmp, *current = (*list)->next;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
 	while (current != NULL)
 	{
-		listint_t *tmp = current;
-
+		tmp = current;
 		while (tmp->prev != NULL && tmp->n < tmp->prev->n)
 		{
 			/* Swap the pointers to perform the node swap */
@@ -28,10 +27,6 @@ void insertion_sort_list(listint_t **list)
 			tmp->prev = tmp->prev->prev;
 			tmp->next->prev = tmp;
 
-			/**
-			 * Update the list pointer if the current node becomes the new head
-			 * of the list
-			 */
 			if (tmp->prev == NULL)
 				*list = tmp;
 			else
