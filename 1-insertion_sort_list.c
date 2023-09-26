@@ -2,17 +2,18 @@
 
 /**
  * insertion_sort_list - Sorts a doubly linked list of integers in ascending
- *						order.
  * @list: Double pointer to the head of the list
  */
 
 void insertion_sort_list(listint_t **list)
 {
-	/* Initialize a pointer to the second node in the list */
-	listint_t *tmp, *current = (*list)->next;
+	listint_t *tmp, *current;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
+
+	/* Set current to the second node in the list */
+	current = (*list)->next;
 
 	while (current != NULL)
 	{
