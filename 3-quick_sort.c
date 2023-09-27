@@ -19,7 +19,6 @@ void swap_int_q(int *x, int *y)
  * @array: pointer to the array to be partitioned
  * @low: starting index of the partition
  * @high: ending index of the partition
- * @size: size of the array
  * Return: Pivot index
  */
 size_t lomuto_partition(int *array, int low, int high)
